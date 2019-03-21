@@ -1,6 +1,6 @@
 # PU Learning
 
-PU learning - method where binary classifier is learned in a semi-supervised way from only positive and unlabeled sample points. It is especially usefull as a worm start for some applications. After trying out multiple methods from [Bing Lu](https://www.cs.uic.edu/~liub/NSF/PSC-IIS-0307239.html) webpage and [this blog post](https://roywright.me/2017/11/16/positive-unlabeled-learning/) I stumbled upon one forum post which lead me to the paper by Liu, Bing, et al. "Partially supervised classification of text documents." ICML. Vol. 2. 2002. It contains beautiful idea of Spies which will be implement here and outperforms all other methods by a huge margin.
+PU learning - method where binary classifier is learned in a semi-supervised way from only positive and unlabeled sample points. It is especially usefull as a worm start for some applications. After trying out multiple methods from [Bing Lu](https://www.cs.uic.edu/~liub/NSF/PSC-IIS-0307239.html) webpage also recent Masashi Sugiyama works and [this blog post](https://roywright.me/2017/11/16/positive-unlabeled-learning/) I stumbled upon one forum post which lead me to the paper by Liu, Bing, et al. "Partially supervised classification of text documents." ICML. Vol. 2. 2002. It contains beautiful idea of Spies which will be implement here and outperforms all other methods by a huge margin.
 
 ## Spies method
 
