@@ -1,6 +1,6 @@
 # PU Learning
 
-PU learning - method where binary classifier is learned in a semi-supervised way from only positive and unlabeled sample points. It is especially usefull as a worm start for some applications. After trying out multiple methods from [Bing Lu](https://www.cs.uic.edu/~liub/NSF/PSC-IIS-0307239.html) webpage also recent Masashi Sugiyama works and [this blog post](https://roywright.me/2017/11/16/positive-unlabeled-learning/) I stumbled upon one forum post which lead me to the paper by Liu, Bing, et al. "Partially supervised classification of text documents." ICML. Vol. 2. 2002. It contains beautiful idea of Spies which will be implement here and outperforms all other methods by a huge margin.
+PU learning - method where binary classifier is learned in a semi-supervised way from only positive and unlabeled sample points. It is especially usefull as a worm start for some applications. After trying out multiple methods from [Bing Lu](https://www.cs.uic.edu/~liub/NSF/PSC-IIS-0307239.html) webpage also recent Masashi Sugiyama works and [this blog post](https://roywright.me/2017/11/16/positive-unlabeled-learning/) I stumbled upon one forum post which lead me to the paper by Liu, Bing, et al. "Partially supervised classification of text documents." ICML. Vol. 2. 2002. It contains beautiful idea of Spies which will be implement here and outperforms most of other methods while being much faster.
 
 ## Spies method
 
@@ -29,7 +29,7 @@ model.predict(X)
 
 ## Experiments
 
-Experiments were executed using notebook from [this blog post](https://roywright.me/2017/11/16/positive-unlabeled-learning/). I have used *baggingPU.py* from [this repo](https://github.com/roywright/pu_learning) so that we have some benchmark to beat.
+Experiments were executed using notebook from [this blog post](https://roywright.me/2017/11/16/positive-unlabeled-learning/). I have used *baggingPU.py* from [this repo](https://github.com/roywright/pu_learning) with DecisionTreeClassifier and SVC at it's core, so that we have some benchmark to beat. Bagging is much slower than spies and even though SVC's perform better than bagging with tress in my use case it is simply infeasable to use due to performance.
 
 Results achieved by PU spies.
 
@@ -41,3 +41,13 @@ When compared to other methods, PU spies clearly stands out.
 
 ![Performance comparisson](performance.png)
 
+|        Method       | Run time |
+|---------------------|----------|
+| Standard classifier | 2.6 s    |
+| PU bagging (tree)   | 4.03 s   |
+| PU bagging (SVC)    | 55.6 s   |
+| Spies               | 0.2 s    |
+
+## Conclusions
+
+Spies using XGB is much faster and as accurate as other PU methods.
